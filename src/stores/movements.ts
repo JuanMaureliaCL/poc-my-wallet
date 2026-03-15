@@ -29,24 +29,24 @@ export const useMovementsStore = defineStore('movements', {
     abonosProyectados: (s) =>
       s.movements.filter((m) => m.type === 'abono_proyectado' && !m.is_confirmed),
 
-    totalCuotas(s): number {
+    totalCuotas(): number {
       return (this.cuotasFijas as Movement[]).reduce((acc, m) => acc + Number(m.amount), 0)
     },
 
-    totalVariables(s): number {
+    totalVariables(): number {
       return (this.gastosVariables as Movement[])
         .filter((m) => !m.is_canje)
         .reduce((acc, m) => acc + Number(m.amount), 0)
     },
 
-    totalAbonos(s): number {
+    totalAbonos(): number {
       return [...(this.abonosReales as Movement[]), ...(this.abonosProyectados as Movement[])].reduce(
         (acc, m) => acc + Number(m.amount),
         0,
       )
     },
 
-    saldoDisponible(s): number {
+    saldoDisponible(): number {
       return (this.totalAbonos as number) - (this.totalCuotas as number) - (this.totalVariables as number)
     },
   },
