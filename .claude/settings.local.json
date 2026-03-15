@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.shadcn-vue.com)",
+      "Bash(find /Users/maurelia/Workspace/Octalink/Internal/Sandbox/my-wallet -not -path */node_modules/* -type f)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm approve-builds:*)",
+      "Bash(pnpm rebuild:*)",
+      "Bash(convert --version)",
+      "Bash(python3 -c \"from PIL import Image; print\\(''PIL ok''\\)\")",
+      "Bash(qlmanage -t -s 512 -o /tmp /Users/maurelia/Workspace/Octalink/Internal/Sandbox/my-wallet/public/icons.svg)",
+      "Read(//private/tmp/**)"
+    ]
+  }
+}
